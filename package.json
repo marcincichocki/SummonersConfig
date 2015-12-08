@@ -24,6 +24,8 @@
     "angular2": "^2.0.0-alpha.48",
     "express": "^4.13.3",
     "normalize.css": "^3.0.3",
+    "q": "^1.4.1",
+    "request-promise": "^1.0.2",
     "systemjs": "^0.19.6",
     "typescript": "^1.7.3"
   },
