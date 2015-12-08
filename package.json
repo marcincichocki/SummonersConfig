@@ -1,0 +1,38 @@
+{
+  "name": "summonersconfig",
+  "version": "0.1.0",
+  "description": "Test runes and masteries setups!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "watch:client": "tsc -p src -w",
+    "watch:server": "tsc -m commonjs -t ES5 -w app.ts",
+    "build:client": "tsc -p src",
+    "build:server": "tsc -m commonjs -t ES5 app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcincichocki/SummonersConfig.git"
+  },
+  "author": "Marcin Cichocki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcincichocki/SummonersConfig/issues"
+  },
+  "homepage": "https://github.com/marcincichocki/SummonersConfig#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.48",
+    "express": "^4.13.3",
+    "normalize.css": "^3.0.3",
+    "systemjs": "^0.19.6",
+    "typescript": "^1.7.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}

@@ -1,0 +1,78 @@
+@mixin fill-color($bg, $border, $color) {
+  color: $color;
+  border-color: $border;
+  background-color: $bg;
+}
+
+@mixin control {
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  border: 2px solid;
+  border-radius: .2rem;
+
+  @content;
+}
+
+
+@mixin btn {
+  .btn {
+    @include control;
+    @include fill-color(transparent, $font-color-secondary, $font-color-secondary);
+
+
+    display: inline-flex;
+
+    cursor: pointer;
+    transition: all .2s ease;
+    text-decoration: none;
+
+    align-items: center;
+    justify-content: center;
+
+    &[class$="active"] {
+      @include fill-color($color-special, $color-special, #fff);
+    }
+
+    &:hover:not([class$="active"]):not([disabled]) {
+      @include fill-color(transparent, #fff, #fff);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.btn-block {
+      width: 100%;
+      margin-bottom: .4rem;
+    }
+
+    &[disabled] {
+      background-color: $disabled;
+    }
+  }
+}
+
+@mixin header($font-size) {
+  font-size: $font-size;
+
+  margin: 0;
+  @content;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin center($direction: "both") {
+  display: flex;
+
+  @if $direction == "x" {
+    justify-content: center;
+  } @else if $direction == "y" {
+    align-items: center;
+  } @else {
+    align-items: center;
+    justify-content: center;
+  }
+}

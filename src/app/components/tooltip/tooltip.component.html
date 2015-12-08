@@ -1,0 +1,34 @@
+<div id="tooltip" *ng-if="tooltipService.tooltip"
+  style.top="{{tooltipService.y}}px"
+  style.left="{{tooltipService.x}}px"
+  [ng-class]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}"
+  [ng-switch]="tooltipService.tooltip.type">
+
+  <!-- rune -->
+  <tooltip-rune-component
+    *ng-switch-when="'rune'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-rune-component>
+
+  <!-- rune-sums -->
+  <tooltip-rune-sums-component
+    *ng-switch-when="'rune-sums'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-rune-sums-component>
+
+  <!-- mastery -->
+  <tooltip-mastery-component
+    *ng-switch-when="'mastery'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-mastery-component>
+
+  <!-- mastery -->
+  <tooltip-mastery-sums-component
+    *ng-switch-when="'mastery-sums'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-mastery-sums-component>
+
+  <div class="tooltip-default" *ng-switch-default>
+    <p>{{ tooltipService.tooltip.data }}</p>
+  </div>
+</div>

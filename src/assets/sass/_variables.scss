@@ -1,0 +1,55 @@
+// define 1rem
+$base-font-size: 10px;
+
+// column layout
+$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+// base font color
+$font-color-primary: #fff;
+$color-special: orange;
+$font-color-secondary: #cecece;
+$disabled: #a7a7a7;
+
+
+/* main header */
+$header-background-color: #2e3340;
+$header-height: 5rem;
+
+
+/* main aside */
+$aside-background-color: #232936;
+
+
+/* main section */
+$section-background-color: #4f535e;
+
+
+
+/* Runes */
+$rune-colors: (
+  "mark": #a1161f,
+  "seal": #c7da27,
+  "glyph": #4fb0f9,
+  "quintessence": #9f60eb
+);
+
+
+/* Masteries */
+$mastery-colors: (
+
+  // ferocity
+  "1": #a1161f,
+
+  // cunning
+  "2": #9f60eb,
+
+  // resolve
+  "3": #4fb0f9
+);
+
+
+$ranks: (
+  "unavailable": #999,
+  "available": #478fca,
+  "active": #ffd700
+);

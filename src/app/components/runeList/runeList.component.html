@@ -1,0 +1,21 @@
+<div id="rune-list">
+  <div class="rune-list-type" *ng-for="#type of types, #i = index">
+    <header class="center-y" (click)="toggle(i)">
+      <h3 [class]="type.name" [ng-class]="{active: show[i]}">{{ type.name }}</h3>
+    </header>
+    <section [hidden]="!show[i]">
+      <rune-list-item-component
+        *ng-for="#rune of ((type.runes
+        | filter: 'tier': search.getTiers())
+        | filter: 'available': !search.unavailable)
+        | search: ['name', 'description', 'tags']: search.query"
+        [rune]="rune"
+        (click)="addRune($event, rune.id)"
+        [tooltip]="{
+          type: 'rune',
+          data: rune
+        }">
+      </rune-list-item-component>
+    </section>
+  </div>
+</div>
