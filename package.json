@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node app",
     "watch:client": "tsc -p src -w",
-    "watch:server": "tsc -m commonjs -t ES5 -w app.ts",
+    "watch:server": "tsc -w",
     "build:client": "tsc -p src",
-    "build:server": "tsc -m commonjs -t ES5 app.ts"
+    "build:server": "tsc"
   },
   "repository": {
     "type": "git",
