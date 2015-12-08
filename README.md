@@ -16,15 +16,18 @@ _[nodejs is requeired](http://nodejs.org/)_
 5. Visit [http://localhost:3000/src](http://localhost:3000/src) in your browser.
 6. Play as you will!
 
+## Change log
 
-## Abandoned project
+All changes are listed [here](/CHANGELOG.md).
 
-If you are looking for older version of this project, [check out this repository](https://github.com/marcincichocki/SummonersConfigOld). Please note that the project is no longer maintained.
+
+## Former project
+
+Old version is available [here](https://github.com/marcincichocki/SummonersConfigOld). Please note that this project is no longer maintained.
 
 
 ## License
 
 *Summoner's Config isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.*
-
 
 [MIT](/LICENSE.md) © Marcin Cichocki
