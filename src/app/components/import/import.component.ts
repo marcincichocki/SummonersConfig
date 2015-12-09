@@ -16,17 +16,11 @@ import {MasteryService} from '../../services/mastery/mastery.service';
           ng-control="name"
           #name="form"
           required>
-
-        <!-- TODO: remove later -->
-        {{summoner.name}}
       </div>
       <div class="form-group">
         <select class="form-control" [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
           <option *ng-for="#server of servers" [value]="server">{{ server | uppercase }}</option>
         </select>
-
-        <!-- TODO: remove later -->
-        {{summoner.server}}
       </div>
       <div class="form-group">
         <input class="btn btn-primary" type="submit" value="Load" [disabled]="!form.form.valid">
