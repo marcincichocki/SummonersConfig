@@ -53,16 +53,17 @@ export class ImportComponent {
         (res) => {
           const data = res.json();
 
-          // TODO: Change array notation to object when its fixed on angular side.
+          // TODO: Change array notation to object when it is fixed on angular side.
           this.runeService.loadRunes(data['runes']);
-
-
-          /* Complicated logic here */
+          this.masteryService.loadMasteries(data['masteries']);
         },
         (error) => console.error(error),
-        () => console.log('Done!')
-      );
+        () => {
 
+          // Callback after load.
+          console.log('Done!')
+        }
+      );
 
     // Reset form.
     this.summoner.reset();
