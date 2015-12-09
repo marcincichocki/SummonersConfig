@@ -4,6 +4,8 @@
     "module": "commonjs"
   },
   "files": [
-    "app.ts"
+    "app.ts",
+    "server/Url.ts",
+    "server/api.ts"
   ]
 }

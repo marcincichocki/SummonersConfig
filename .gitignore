@@ -11,3 +11,6 @@ app/assets/css/
 
 # exclude gulpfile from ignored files
 !gulpfile.js
+
+# Ignore user api key. DO NOT DELETE THIS.
+server/api.ts
