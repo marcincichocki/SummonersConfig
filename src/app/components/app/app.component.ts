@@ -13,7 +13,7 @@ import {TooltipComponent} from '../tooltip/tooltip.component';
       <div class="container">
         <header class="row main-header center-y">
           <div class="col-4">
-            <h1>Summoner's Config</h1>
+            <h1 class="logo">Summoner's Config</h1>
           </div>
           <div class="col-8">
             <nav>
