@@ -52,6 +52,56 @@ export class RuneService extends Pages<Page> {
 
 
   /**
+   * FIXME: Param pages should be of type Page, but it does not have current
+   * property. Need to update Page class to contain this prop and Pages class
+   * to utilize this functionality.
+   *
+   * Load runes from array of pages. Pass data directly from riot api to
+   * this function to load runes.
+   * @param {any[]} pages - Array of pages.
+   */
+  loadRunes(pages: any[]): void {
+
+    // Active page.
+    let current = 0;
+
+    // Reset pages.
+    this.pages = [];
+
+    // For each gven page:
+    pages.forEach((page, index) => {
+
+      // Add new one.
+      this.addPage();
+
+      // Update slots.
+      this.current.slots = page.slots;
+
+      // Update name.
+      this.current.name = page.name;
+
+      // Count sums and ip.
+      this.count();
+
+      // Update counters.
+      if (page.slots.length === 30) {
+        this.current.counter = [0, 0, 0, 0];
+      } else {
+        page.slots.forEach(slot => {
+          this.current.counter[this.getTypeId(slot.runeId)] -= 1;
+        });
+      }
+
+      // Check if current page sohuld be active.
+      if (page.current) current = index;
+    });
+
+    // Change active page to current.
+    this.changePage(current);
+  }
+
+
+  /**
    * Add rune(s) of given id.
    * @param {number} id - Id of rune.
    * @param {number} [options] - Optional settings.

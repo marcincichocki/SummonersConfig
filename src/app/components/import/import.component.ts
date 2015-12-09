@@ -53,6 +53,10 @@ export class ImportComponent {
         (res) => {
           const data = res.json();
 
+          // TODO: Change array notation to object when its fixed on angular side.
+          this.runeService.loadRunes(data['runes']);
+
+
           /* Complicated logic here */
         },
         (error) => console.error(error),
