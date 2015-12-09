@@ -26,6 +26,8 @@ import {MasteryPageStatsComponent} from '../masteryPageStats/masteryPageStats.co
   `,
   styles: [`
     :host {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       width: 100%;
     }

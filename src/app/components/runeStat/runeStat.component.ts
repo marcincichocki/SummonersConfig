@@ -23,7 +23,11 @@ import {RuneStatItemComponent} from '../runeStatItem/runeStatItem.component';
   `,
   styles: [`
     :host {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-flex-shrink: 1 !important;
+      -ms-flex-negative: 1 !important;
       flex-shrink: 1 !important;
     }
   `],

@@ -40,6 +40,8 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
   `,
   styles: [`
     :host {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       width: 100%;
     }
