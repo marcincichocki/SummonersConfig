@@ -104,6 +104,28 @@ html {
 }
 
 
+// Loader
+// ==========================================================================
+.loader {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: radial-gradient(#999, #4f535e);
+  color: #f3f3f3;
+  text-shadow:
+    2px 2px 0 #000,
+    0px 0px 20px rgba(0,0,0, .2);
+
+  font-weight: bold;
+  font-style: italic;
+
+  > h1 {
+    font-size: 10rem !important;
+  }
+}
+
+
 // Forms
 // ==========================================================================
 .form {
