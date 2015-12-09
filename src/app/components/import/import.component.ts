@@ -21,7 +21,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
         {{summoner.name}}
       </div>
       <div class="form-group">
-        <select [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
+        <select class="form-control" [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
           <option *ng-for="#server of servers" [value]="server">{{ server | uppercase }}</option>
         </select>
 
