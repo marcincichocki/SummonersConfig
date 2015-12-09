@@ -5,15 +5,19 @@ import {Component, FORM_DIRECTIVES, NgFor} from 'angular2/angular2';
   selector: 'import-component',
   directives: [FORM_DIRECTIVES, NgFor],
   template: `
-    <form class="form-inline" (ng-submit)="onSubmit()">
+    <form class="form-inline" (ng-submit)="onSubmit()" #form="form">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Summoner name" [(ng-model)]="summoner.name">
+        <input class="form-control" type="text" placeholder="Summoner name"
+          [(ng-model)]="summoner.name"
+          ng-control="name"
+          #name="form"
+          required>
 
         <!-- TODO: remove later -->
         {{summoner.name}}
       </div>
       <div class="form-group">
-        <select [(ng-model)]="summoner.server">
+        <select [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
           <option *ng-for="#server of servers" [value]="server">{{ server | uppercase }}</option>
         </select>
 
@@ -21,7 +25,7 @@ import {Component, FORM_DIRECTIVES, NgFor} from 'angular2/angular2';
         {{summoner.server}}
       </div>
       <div class="form-group">
-        <button class="btn btn-primary">Load</button>
+        <input class="btn btn-primary" type="submit" value="Load" [disabled]="!form.form.valid">
       </div>
     </form>
   `
