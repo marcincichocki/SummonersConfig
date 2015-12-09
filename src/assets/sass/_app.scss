@@ -99,6 +99,10 @@ html {
   cursor: not-allowed !important;
 }
 
+.main-content {
+  background: $main-background-color;
+}
+
 
 // Forms
 // ==========================================================================
@@ -351,7 +355,6 @@ html {
 // Main section
 // ==========================================================================
 .main-section {
-  background: $section-background-color;
 
   // fill empty space(width)
   flex: 1;
