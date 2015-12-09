@@ -4,7 +4,7 @@ typings/
 npm-debug.log
 
 # css
-app/assets/css/
+src/assets/css/
 
 # transpiled files
 **/*.js
