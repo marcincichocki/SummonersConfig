@@ -68,7 +68,7 @@ export class RuneService extends Pages<Page> {
     // Reset pages.
     this.pages = [];
 
-    // For each gven page:
+    // For each given page:
     pages.forEach((page, index) => {
 
       // Add new one.
