@@ -104,24 +104,39 @@ html {
 }
 
 
-// Loader
+// Spinner
 // ==========================================================================
-.loader {
-  text-align: center;
+.spinner-wrapper {
   width: 100vw;
   height: 100vh;
-
-  background-image: radial-gradient(#999, #4f535e);
-  color: #f3f3f3;
-  text-shadow:
-    2px 2px 0 #000,
-    0px 0px 20px rgba(0,0,0, .2);
-
-  font-weight: bold;
-  font-style: italic;
+  background: #4f535e;
 
   > h1 {
     font-size: 10rem !important;
+  }
+}
+
+.spinner {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 1rem solid rgba(255,255,255, .1);
+  display: flex;
+
+  &::after {
+    flex: 1;
+    content: "";
+    border-radius: 50%;
+    border: 1rem solid transparent;
+    border-bottom: 1rem solid rgba(0,0,0, .4);
+    animation: 1s spin infinite linear;
+    margin: -1rem;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
   }
 }
 
