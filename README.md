@@ -11,10 +11,20 @@ _[nodejs is requeired](http://nodejs.org/)_
 
 1. Clone this repository(git is required) or download zip, extract, open terminal and go to app's root directory.
 2. `$ npm install`
-3. `$ npm run build:server && npm run build:client`
-4. `$ npm start`
-5. Visit [http://localhost:3000/src](http://localhost:3000/src) in your browser.
-6. Play as you will!
+3. Create api.ts file in `server/` directory, paste code below and change api key to your own.
+
+  ```javascript
+  // Here goes api key. If you don't have
+  // any, visit: https://developer.riotgames.com/
+  const API_KEY = 'YOUR API KEY';
+
+  export default API_KEY;
+  ```
+
+4. `$ npm run build:server && npm run build:client && gulp styles`
+5. `$ npm start`
+6. Visit [http://localhost:3000/src](http://localhost:3000/src) in your browser.
+7. Play as you will!
 
 ## Change log
 

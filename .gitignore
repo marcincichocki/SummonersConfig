@@ -4,10 +4,13 @@ typings/
 npm-debug.log
 
 # css
-app/assets/css/
+src/assets/css/
 
 # transpiled files
 **/*.js
 
 # exclude gulpfile from ignored files
 !gulpfile.js
+
+# Ignore user api key. DO NOT DELETE THIS.
+server/api.ts

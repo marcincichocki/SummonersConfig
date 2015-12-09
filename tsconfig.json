@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs"
+  },
+  "files": [
+    "app.ts",
+    "server/Url.ts",
+    "server/Summoner.ts",
+    "server/api.ts"
+  ]
+}

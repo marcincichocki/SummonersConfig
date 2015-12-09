@@ -59,6 +59,58 @@ export class MasteryService extends Pages<Page> {
   }
 
   /**
+   * FIXME: Param pages should be of type Page, but it does not have current
+   * property. Need to update Page class to contain this prop and Pages class
+   * to utilize this functionality.
+   *
+   * Load masteries from array of pages. Pass data directly from riot api to
+   * this function to load masteries.
+   * @param {any[]} pages - Array of pages.
+   */
+  loadMasteries(pages: any[]): void {
+
+    // Active page.
+    let current = 0;
+
+    // Reset pages.
+    this.pages = [];
+
+    // For each given page:
+    pages.forEach((page, index) => {
+
+      // Add new one.
+      this.addPage();
+
+      // Update active masteries.
+      this.current.masteries = page.masteries;
+
+      // Update name.
+      this.current.name = page.name;
+
+      // Get ranks.
+      this.current.rank = page.masteries
+        .reduce((rank, el) => { rank[el.id] = el.rank; return rank; }, {});
+
+      // Updated sums.
+      this.current.sums.forEach((el, index) => {
+        this.current.sums[index] = page.masteries
+          .filter((mastery) => parseInt(mastery.id.toString().slice(1, 2), 10) === (index + 1))
+          .reduce((sum, mastery) => sum + mastery.rank, 0);
+      });
+
+      // Update available points.
+      this.current.max -= this.current.sums.reduce((sum, next) => sum + next, 0);
+
+      // Check if current page sohuld be active.
+      if (page.current) current = index;
+    });
+
+    // Change active page to current.
+    this.changePage(current);
+  }
+
+
+  /**
    * Get category and row based for given mastery id.
    * @param {number} id - unique mastery id.
    * @return {Object} - Object which contains category and row properties.
