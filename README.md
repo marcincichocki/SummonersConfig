@@ -21,7 +21,7 @@ _[nodejs is requeired](http://nodejs.org/)_
   export default API_KEY;
   ```
 
-4. `$ npm run build:server && npm run build:client`
+4. `$ npm run build:server && npm run build:client && gulp styles`
 5. `$ npm start`
 6. Visit [http://localhost:3000/src](http://localhost:3000/src) in your browser.
 7. Play as you will!
