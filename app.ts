@@ -60,8 +60,8 @@ app.get('/:server/:name', (req, res) => {
       })
     ]).spread((runes, masteries) => {
       res.send({
-        runes,
-        masteries,
+        runes: runes[summoner.id].pages,
+        masteries: masteries[summoner.id].pages,
         summoner
       })
     });
