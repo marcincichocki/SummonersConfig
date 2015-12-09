@@ -1,4 +1,8 @@
 import {Component, FORM_DIRECTIVES, NgFor} from 'angular2/angular2';
+import {Http} from 'angular2/http';
+
+import {RuneService} from '../../services/rune/rune.service';
+import {MasteryService} from '../../services/mastery/mastery.service';
 
 
 @Component({
@@ -38,11 +42,22 @@ export class ImportComponent {
 
 
   constructor(
-    /* services goes here */
+    public http: Http,
+    public runeService: RuneService,
+    public masteryService: MasteryService
   ) { }
 
   onSubmit() {
-    /* Complicated logic here */
+    this.http.get(`../${this.summoner.server}/${this.summoner.name}`)
+      .subscribe(
+        (res) => {
+          const data = res.json();
+
+          /* Complicated logic here */
+        },
+        (error) => console.error(error),
+        () => console.log('Done!')
+      );
 
 
     // Reset form.
