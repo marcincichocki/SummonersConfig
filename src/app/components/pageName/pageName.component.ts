@@ -30,7 +30,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
       </div>
     </div>
     <div *ngIf="showInput">
-      <form class="row" (ngSubmit)="onSubmit()" #nf="form">
+      <form class="row" (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="col-8 form-group">
           <input class="form-control"
             type="text"
@@ -38,12 +38,12 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
             [(ngModel)]="model.name"
             select
             ng-control="name"
-            #name="form"
+            #name="ngForm"
             required>
         </div>
         <div class="col-4 form-group">
           <input class="btn btn-block btn-primary" type="submit" value="Save"
-            [disabled]="!nf.form.valid">
+            [disabled]="!form.form.valid">
         </div>
       </form>
       <div class="row">
