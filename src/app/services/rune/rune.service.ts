@@ -41,10 +41,8 @@ export class RuneService extends Pages<Page> {
           // TODO: Use .map()
           const data = res.json();
 
-          // TODO: change to properties after upgrading to
-          // alpha 49(somebody changed response to be an Object not any).
-          this.stats = data['stats'];
-          this.runes = data['runes'];
+          this.stats = data.stats;
+          this.runes = data.runes;
         },
         error => console.log(error)
       );

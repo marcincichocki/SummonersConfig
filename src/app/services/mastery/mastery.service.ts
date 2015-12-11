@@ -49,10 +49,8 @@ export class MasteryService extends Pages<Page> {
           // TODO: Use .map()
           const data = res.json();
 
-          // TODO: change to properties after upgrading to
-          // alpha 49(somebody changed response to be an Object not any).
-          this.grid = data['grid'];
-          this.masteries = data['masteries'];
+          this.grid = data.grid;
+          this.masteries = data.masteries;
         },
         error => console.log(error)
       );
