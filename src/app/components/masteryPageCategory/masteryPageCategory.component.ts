@@ -8,7 +8,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   selector: 'mastery-page-category-component',
   template: `
     <mastery-page-row-component
-      *ng-for="#row of masteryService.grid[category.name], #index = index"
+      *ngFor="#row of masteryService.grid[category.name], #index = index"
       [row]="row"
       [index]="index">
     </mastery-page-row-component>

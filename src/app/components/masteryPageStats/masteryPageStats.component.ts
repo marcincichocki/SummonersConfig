@@ -11,7 +11,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
         <div class="col-8">
           <div class="mastery-category-points">
             <mastery-page-stats-item-component class="{{ masteryService.categories[i] | lowercase }}"
-              *ng-for="#sum of masteryService.current.sums, #i = index"
+              *ngFor="#sum of masteryService.current.sums, #i = index"
               [sum]="sum"
               [index]="i + 1">
             </mastery-page-stats-item-component>

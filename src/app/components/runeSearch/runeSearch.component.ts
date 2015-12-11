@@ -7,16 +7,16 @@ import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
   template: `
     <div class="form-inline">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Search" [(ng-model)]="query">
+        <input class="form-control" type="text" placeholder="Search" [(ngModel)]="query">
       </div>
       <div class="form-group">
-        <label class="checkbox" *ng-for="#tier of tiers">
-          <input type="checkbox" [(ng-model)]="tier.selected">{{ tier.name }}
+        <label class="checkbox" *ngFor="#tier of tiers">
+          <input type="checkbox" [(ngModel)]="tier.selected">{{ tier.name }}
         </label>
       </div>
       <div class="form-group">
         <label class="checkbox">
-          <input type="checkbox" [(ng-model)]="unavailable">Unavailable
+          <input type="checkbox" [(ngModel)]="unavailable">Unavailable
         </label>
       </div>
     </div>

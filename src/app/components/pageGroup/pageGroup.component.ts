@@ -10,9 +10,9 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
     <div class="row">
       <div class="col-8 page-group">
         <button class="btn"
-          *ng-for="#page of service.pages, #index = index"
+          *ngFor="#page of service.pages, #index = index"
           (click)="service.changePage(index)"
-          [ng-class]="{active: isActive(index)}"
+          [ngClass]="{active: isActive(index)}"
           [tooltip]="{
             type: type,
             data: {

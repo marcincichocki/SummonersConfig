@@ -8,7 +8,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   directives: [NgClass, NgFor],
 
   /**
-   * Description using [inner-html] insted of standard interpolation
+   * Description using [innerHtml] insted of standard interpolation
    * because of HTML tag inside description messages(rito pls) like <br>
    */
   template: `
@@ -17,7 +17,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
         {{ data.mastery.name }}
       </h3>
       <p class="rank"
-        [ng-class]="{
+        [ngClass]="{
           available: masteryService.masteryCheckUp(data.mastery.id),
           active: data.rank > 0
         }">Rank:
@@ -25,9 +25,9 @@ import {MasteryService} from '../../services/mastery/mastery.service';
         <span>{{ data.mastery.ranks }}</span>
       </p>
       <p class="description"
-        [inner-html]="description"
-        *ng-for="#description of data.mastery.description, #i = index"
-        [ng-class]="{
+        [innerHtml]="description"
+        *ngFor="#description of data.mastery.description, #i = index"
+        [ngClass]="{
           current: data.rank - 1 === i,
           next: (data.rank || 0) === i
         }">

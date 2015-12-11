@@ -10,7 +10,7 @@ import {RuneStatItemComponent} from '../runeStatItem/runeStatItem.component';
     <div class="row grow">
       <div class="col-8 column scrollable">
         <rune-stat-item-component
-          *ng-for="#sum of runeService.current.sums, #i = index"
+          *ngFor="#sum of runeService.current.sums, #i = index"
           [sum]="sum">
         </rune-stat-item-component>
       </div>

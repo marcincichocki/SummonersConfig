@@ -9,9 +9,9 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
   selector: 'mastery-page-row-component',
   template: `
     <div class="mastery-row row{{ rowIndex + 1 }}"
-      [ng-class]="{ even: masteryService.isEven(rowIndex + 1) }">
+      [ngClass]="{ even: masteryService.isEven(rowIndex + 1) }">
       <mastery-page-mastery-component
-        *ng-for="#mastery of row"
+        *ngFor="#mastery of row"
         [tooltip]="{
           type: 'mastery',
           data: {
@@ -23,7 +23,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
         (contextmenu)="onRightClick(mastery, $event)"
         (wheel)="onWheel(mastery, $event)"
         [mastery]="mastery"
-        [row-index]="rowIndex">
+        [rowIndex]="rowIndex">
       </mastery-page-mastery-component>
     </div>
   `,

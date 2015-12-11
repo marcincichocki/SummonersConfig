@@ -9,17 +9,17 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   selector: 'import-component',
   directives: [FORM_DIRECTIVES, NgFor],
   template: `
-    <form class="form-inline" (ng-submit)="onSubmit()" #form="form">
+    <form class="form-inline" (ngSubmit)="onSubmit()" #form="form">
       <div class="form-group">
         <input class="form-control" type="text" placeholder="Summoner name"
-          [(ng-model)]="summoner.name"
+          [(ngModel)]="summoner.name"
           ng-control="name"
           #name="form"
           required>
       </div>
       <div class="form-group">
-        <select class="form-control" [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
-          <option *ng-for="#server of servers" [value]="server">{{ server | uppercase }}</option>
+        <select class="form-control" [(ngModel)]="summoner.server" ng-control="server" #server="form" required>
+          <option *ngFor="#server of servers" [value]="server">{{ server | uppercase }}</option>
         </select>
       </div>
       <div class="form-group">

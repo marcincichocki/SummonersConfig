@@ -29,9 +29,9 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
     </aside>
     <section class="col-8 main-section center">
       <div class="column">
-        <rune-search-component #search-component></rune-search-component>
+        <rune-search-component #searchComponent></rune-search-component>
         <div class="runes-wrapper">
-          <rune-list-component [search-component]="searchComponent"></rune-list-component>
+          <rune-list-component [searchComponent]="searchComponent"></rune-list-component>
           <rune-page-component></rune-page-component>
         </div>
       </div>
