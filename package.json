@@ -21,13 +21,18 @@
   },
   "homepage": "https://github.com/marcincichocki/SummonersConfig#readme",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.48",
+    "angular2": "2.0.0-alpha.52",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.13",
     "express": "^4.13.3",
     "normalize.css": "^3.0.3",
     "q": "^1.4.1",
+    "reflect-metadata": "0.1.2",
     "request-promise": "^1.0.2",
+    "rxjs": "5.0.0-alpha.14",
     "systemjs": "^0.19.6",
-    "typescript": "^1.7.3"
+    "typescript": "^1.7.3",
+    "zone.js": "0.5.8"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
