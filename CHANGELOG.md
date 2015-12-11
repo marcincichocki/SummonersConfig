@@ -1,5 +1,23 @@
 
 
+<a name="0.2.0"></a>
+# 0.2.0 (11.12.2015)
+
+## Bug Fixes
+
+* Styles inside templates are now prefixed to last 2 versions[(ec3b380)](https://github.com/marcincichocki/SummonersConfig/commit/ec3b380), closes [#4](https://github.com/marcincichocki/SummonersConfig/issues/4).
+* Using dot notation for http response[(8464f19)](https://github.com/marcincichocki/SummonersConfig/commit/8464f19), closes [#6](https://github.com/marcincichocki/SummonersConfig/issues/6).
+
+## Features
+
+* New import module. Select server and summoner name to load runes and masteries[(3931af8)](https://github.com/marcincichocki/SummonersConfig/commit/3931af8), closes [#2](https://github.com/marcincichocki/SummonersConfig/issues/2).
+* Updated app logo and added spinner on bootstrap[(c5f001c)](https://github.com/marcincichocki/SummonersConfig/commit/c5f001c), closes [#3](https://github.com/marcincichocki/SummonersConfig/issues/3).
+
+## BREAKING CHANGES
+
+* Updated angular to version 2.0.0-alpha.52[(7cd0986)](https://github.com/marcincichocki/SummonersConfig/commit/7cd0986).
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (08.12.2015)
 
