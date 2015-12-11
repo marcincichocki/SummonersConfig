@@ -12,7 +12,7 @@ import {Slot} from '../../services/rune/Slot';
   template: `
     <div id="rune-page">
       <rune-page-item-component
-        *ng-for="#slot of runeService.current.slots"
+        *ngFor="#slot of runeService.current.slots"
         [rune]="{ slot: slot, image: runeService.runes[slot.runeId].image }"
         (click)="removeRune($event, slot)"
         [tooltip]="{ type: 'rune', data: runeService.runes[slot.runeId] }">

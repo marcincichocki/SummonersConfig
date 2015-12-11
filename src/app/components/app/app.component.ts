@@ -17,9 +17,9 @@ import {TooltipComponent} from '../tooltip/tooltip.component';
           </div>
           <div class="col-8">
             <nav>
-              <a class="btn" [router-link]="['/' + routes.home.as]">Home</a>
-              <a class="btn" [router-link]="['/' + routes.runes.as]">Runes</a>
-              <a class="btn" [router-link]="['/' + routes.masteries.as]">Masteries</a>
+              <a class="btn" [routerLink]="['/' + routes.home.as]">Home</a>
+              <a class="btn" [routerLink]="['/' + routes.runes.as]">Runes</a>
+              <a class="btn" [routerLink]="['/' + routes.masteries.as]">Masteries</a>
             </nav>
           </div>
         </header>

@@ -16,7 +16,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
     }
   `],
   template: `
-    <div class="row" *ng-if="!showInput">
+    <div class="row" *ngIf="!showInput">
       <div class="col-8 center-y">
         <h2 class="page-name"
           [tooltip]="{
@@ -29,21 +29,21 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
           (click)="toggleInput()">Change</button>
       </div>
     </div>
-    <div *ng-if="showInput">
-      <form class="row" (ng-submit)="onSubmit()" #nf="form">
+    <div *ngIf="showInput">
+      <form class="row" (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="col-8 form-group">
           <input class="form-control"
             type="text"
             [placeholder]="placeholder"
-            [(ng-model)]="model.name"
+            [(ngModel)]="model.name"
             select
             ng-control="name"
-            #name="form"
+            #name="ngForm"
             required>
         </div>
         <div class="col-4 form-group">
           <input class="btn btn-block btn-primary" type="submit" value="Save"
-            [disabled]="!nf.form.valid">
+            [disabled]="!form.form.valid">
         </div>
       </form>
       <div class="row">

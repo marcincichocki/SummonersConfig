@@ -9,17 +9,17 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   selector: 'import-component',
   directives: [FORM_DIRECTIVES, NgFor],
   template: `
-    <form class="form-inline" (ng-submit)="onSubmit()" #form="form">
+    <form class="form-inline" (ngSubmit)="onSubmit()" #form="ngForm">
       <div class="form-group">
         <input class="form-control" type="text" placeholder="Summoner name"
-          [(ng-model)]="summoner.name"
+          [(ngModel)]="summoner.name"
           ng-control="name"
-          #name="form"
+          #name="ngForm"
           required>
       </div>
       <div class="form-group">
-        <select class="form-control" [(ng-model)]="summoner.server" ng-control="server" #server="form" required>
-          <option *ng-for="#server of servers" [value]="server">{{ server | uppercase }}</option>
+        <select class="form-control" [(ngModel)]="summoner.server" ng-control="server" #server="ngForm" required>
+          <option *ngFor="#server of servers" [value]="server">{{ server | uppercase }}</option>
         </select>
       </div>
       <div class="form-group">
@@ -47,9 +47,8 @@ export class ImportComponent {
         (res) => {
           const data = res.json();
 
-          // TODO: Change array notation to object when it is fixed on angular side.
-          this.runeService.loadRunes(data['runes']);
-          this.masteryService.loadMasteries(data['masteries']);
+          this.runeService.loadRunes(data.runes);
+          this.masteryService.loadMasteries(data.masteries);
         },
         (error) => console.error(error),
         () => {

@@ -7,13 +7,13 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   selector: 'mastery-page-mastery-component',
   template: `
     <div class="mastery m{{ mastery }}"
-      [ng-class]="{
+      [ngClass]="{
         available: masteryService.masteryCheckUp(mastery),
         active: isMasteryActive(mastery),
         max: isMasteryMaxed(mastery)
       }">
 
-      <p class="rank" *ng-if="masteryService.isEven(rowIndex)">
+      <p class="rank" *ngIf="masteryService.isEven(rowIndex)">
         <span>{{ masteryService.current.rank[mastery] || 0 }}/</span>
         <span>{{ masteryService.masteries[mastery].ranks }}</span>
       </p>
