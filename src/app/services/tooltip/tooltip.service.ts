@@ -9,6 +9,7 @@ export class TooltipService {
   private offsetY: number = 20;
   private width: number = 250;
   private height: number = 200;
+  private padding: number = 20;
 
   public tooltip: Tooltip = null;
   public x: number = 0;
@@ -38,8 +39,8 @@ export class TooltipService {
 
   inViewport(x, y) {
     return {
-      x: x + this.width + this.offsetX > window.innerWidth,
-      y: y + this.height + this.offsetY > window.innerHeight
+      x: x + this.width + this.offsetX > window.innerWidth - this.padding,
+      y: y + this.height + this.offsetY > window.innerHeight - this.padding
     }
   }
 }
