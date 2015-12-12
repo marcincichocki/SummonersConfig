@@ -57,7 +57,7 @@ export class TooltipService {
   /**
    * Hides tooltip and remove data.
    */
-  hide() {
+  hide(): void {
     this.tooltip = null;
   }
 
