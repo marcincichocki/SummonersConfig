@@ -7,8 +7,8 @@ import {Tooltip} from './tooltip';
 export class TooltipService {
   private offsetX: number = 20;
   private offsetY: number = 20;
-  private width: number = 250;
-  private height: number = 200;
+  private width: number = 0;
+  private height: number = 0;
   private padding: number = 20;
 
   public tooltip: Tooltip = null;
@@ -19,22 +19,29 @@ export class TooltipService {
 
   show(tooltip: Tooltip) {
     this.tooltip = tooltip;
+
+    /**
+     * This is a hack, not actual solution. Browser will "wait" until
+     * stack is empty to get element. That means, angular will have an
+     * opportunity to create and insert element to the DOM(*ngSwitch).
+     */
+    setTimeout(() => {
+      const tooltip: HTMLElement = document.getElementById('tooltip');
+
+      this.height = tooltip.clientHeight;
+      this.width = tooltip.clientWidth;
+    }, 0);
   }
 
   hide() {
     this.tooltip = null;
   }
 
-  // TODO: Make tooltip change position near the "walls"(viewport).
-  // UPDATE: hotfix implemented, still need fixing but now does not
-  // break the app.
   follow(event: MouseEvent) {
-    this.x = event.pageX + this.offsetX;
-    this.y = event.pageY + this.offsetY;
+    const {x, y} = this.inViewport(event.x, event.y);
 
-    const vp = this.inViewport(event.pageX, event.pageY);
-    this.translateX = vp.x;
-    this.translateY = vp.y;
+    this.x = x ? event.x - this.width - this.offsetX : event.x + this.offsetX;
+    this.y = y ? event.y - this.height - this.offsetY : event.y + this.offsetY;
   }
 
   inViewport(x, y) {
