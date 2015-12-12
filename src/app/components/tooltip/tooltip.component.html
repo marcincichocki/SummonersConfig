@@ -1,34 +1,33 @@
-<div id="tooltip" *ngIf="tooltipService.tooltip"
-  style.top="{{tooltipService.y}}px"
-  style.left="{{tooltipService.x}}px"
-  [ngClass]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}"
-  [ngSwitch]="tooltipService.tooltip.type">
+<div id="tooltip" *ngIf="service.tooltip"
+  style.top="{{service.y}}px"
+  style.left="{{service.x}}px"
+  [ngSwitch]="service.tooltip.type">
 
   <!-- rune -->
   <tooltip-rune-component
     *ngSwitchWhen="'rune'"
-    [data]="tooltipService.tooltip.data">
+    [data]="service.tooltip.data">
   </tooltip-rune-component>
 
   <!-- rune-sums -->
   <tooltip-rune-sums-component
     *ngSwitchWhen="'rune-sums'"
-    [data]="tooltipService.tooltip.data">
+    [data]="service.tooltip.data">
   </tooltip-rune-sums-component>
 
   <!-- mastery -->
   <tooltip-mastery-component
     *ngSwitchWhen="'mastery'"
-    [data]="tooltipService.tooltip.data">
+    [data]="service.tooltip.data">
   </tooltip-mastery-component>
 
   <!-- mastery -->
   <tooltip-mastery-sums-component
     *ngSwitchWhen="'mastery-sums'"
-    [data]="tooltipService.tooltip.data">
+    [data]="service.tooltip.data">
   </tooltip-mastery-sums-component>
 
   <div class="tooltip-default" *ngSwitchDefault>
-    <p>{{ tooltipService.tooltip.data }}</p>
+    <p>{{ service.tooltip.data }}</p>
   </div>
 </div>

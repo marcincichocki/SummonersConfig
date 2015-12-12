@@ -19,5 +19,5 @@ import {TooltipMasterySumsComponent} from '../tooltipMasterySums/tooltipMasteryS
   ]
 })
 export class TooltipComponent {
-  constructor(public tooltipService: TooltipService) { }
+  constructor(public service: TooltipService) { }
 }
