@@ -1,7 +1,6 @@
 <div id="tooltip" *ngIf="tooltipService.tooltip"
   style.top="{{tooltipService.y}}px"
   style.left="{{tooltipService.x}}px"
-  [ngClass]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}"
   [ngSwitch]="tooltipService.tooltip.type">
 
   <!-- rune -->

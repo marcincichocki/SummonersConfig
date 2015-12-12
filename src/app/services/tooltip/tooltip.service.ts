@@ -14,8 +14,6 @@ export class TooltipService {
   public tooltip: Tooltip = null;
   public x: number = 0;
   public y: number = 0;
-  public translateX = false;
-  public translateY = false;
 
   show(tooltip: Tooltip) {
     this.tooltip = tooltip;
