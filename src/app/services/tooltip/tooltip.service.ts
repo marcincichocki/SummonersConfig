@@ -1,7 +1,5 @@
 import {Injectable} from 'angular2/core';
 
-import {Tooltip} from './tooltip';
-
 
 @Injectable()
 export class TooltipService {
@@ -89,4 +87,14 @@ export class TooltipService {
       y: y + this.height + this.spaceY > window.innerHeight - this.padding
     }
   }
+}
+
+
+/**
+ * Basic tooltip interface. Each tooltip must have type to display right
+ * tooltip template and data which should be displayed.
+ */
+interface Tooltip {
+  type: string;
+  data: any;
 }
