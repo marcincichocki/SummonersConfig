@@ -36,10 +36,10 @@ export class TooltipService {
   }
 
   follow(event: MouseEvent) {
-    const {x, y} = this.inViewport(event.x, event.y);
+    const {x, y} = this.inViewport(event.clientX, event.clientY);
 
-    this.x = x ? event.x - this.width - this.offsetX : event.x + this.offsetX;
-    this.y = y ? event.y - this.height - this.offsetY : event.y + this.offsetY;
+    this.x = x ? event.clientX - this.width - this.offsetX : event.clientX + this.offsetX;
+    this.y = y ? event.clientY - this.height - this.offsetY : event.clientY + this.offsetY;
   }
 
   inViewport(x, y) {
