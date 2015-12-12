@@ -7,8 +7,8 @@ import {Tooltip} from './tooltip';
 export class TooltipService {
   private offsetX: number = 20;
   private offsetY: number = 20;
-  private tooltipMaxWidth: number = 250;
-  private tooltipMaxHeight: number = 200;
+  private width: number = 250;
+  private height: number = 200;
 
   public tooltip: Tooltip = null;
   public x: number = 0;
@@ -38,8 +38,8 @@ export class TooltipService {
 
   inViewport(x, y) {
     return {
-      x: x + this.tooltipMaxWidth + this.offsetX > window.innerWidth,
-      y: y + this.tooltipMaxHeight + this.offsetY > window.innerHeight
+      x: x + this.width + this.offsetX > window.innerWidth,
+      y: y + this.height + this.offsetY > window.innerHeight
     }
   }
 }
