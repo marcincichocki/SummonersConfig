@@ -1,4 +1,4 @@
-import {Directive} from 'angular2/angular2';
+import {Directive} from 'angular2/core';
 
 import {TooltipService} from '../services/tooltip/tooltip.service';
 

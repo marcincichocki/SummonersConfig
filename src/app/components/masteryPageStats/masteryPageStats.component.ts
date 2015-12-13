@@ -1,4 +1,5 @@
-import {Component, NgFor} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {NgFor} from 'angular2/common';
 
 import {MasteryService} from '../../services/mastery/mastery.service';
 import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPageStatsItem.component';

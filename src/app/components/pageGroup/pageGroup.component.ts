@@ -1,4 +1,5 @@
-import {Component, NgFor, NgClass, Input} from 'angular2/angular2';
+import {Component, Input} from 'angular2/core';
+import {NgFor, NgClass} from 'angular2/common';
 
 import {TooltipDirective} from '../../directives/tooltip.directive';
 
