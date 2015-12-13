@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 
 import {MasteryPageComponent} from '../masteryPage/masteryPage.component';
 import {MasteryPageGroupComponent} from '../masteryPageGroup/masteryPageGroup.component';

@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 
 import {RuneSearchComponent} from '../runeSearch/runeSearch.component';
 import {RuneListComponent} from '../runeList/runeList.component';

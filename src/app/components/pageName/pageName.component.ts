@@ -1,4 +1,5 @@
-import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, Input} from 'angular2/angular2';
+import {Component, Input} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 
 import {SelectDirective} from '../../directives/select.directive';
 import {TooltipDirective} from '../../directives/tooltip.directive';

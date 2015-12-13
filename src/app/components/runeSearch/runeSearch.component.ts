@@ -1,4 +1,5 @@
-import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
 
 
 @Component({

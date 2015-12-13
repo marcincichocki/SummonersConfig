@@ -1,4 +1,4 @@
-import {bootstrap} from 'angular2/angular2';
+import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {HTTP_BINDINGS} from 'angular2/http';
 

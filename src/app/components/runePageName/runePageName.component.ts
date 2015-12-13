@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 
 import {RuneService} from '../../services/rune/rune.service';
 import {PageNameComponent} from '../pageName/pageName.component';

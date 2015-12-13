@@ -1,4 +1,5 @@
-import {Component, FORM_DIRECTIVES, NgFor} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES, NgFor} from 'angular2/common';
 import {Http} from 'angular2/http';
 
 import {RuneService} from '../../services/rune/rune.service';
