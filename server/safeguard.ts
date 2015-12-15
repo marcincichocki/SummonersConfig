@@ -4,7 +4,7 @@
 import moment = require('moment');
 
 // Date which determines when new season started.
-export const SEASON_START: moment.Moment = moment('2015-12-01', 'YYYY-MM-DD');
+export const SEASON_START: moment.Moment = moment('2015-11-11 11:01 +0000', 'YYYY-MM-DD HH:mm Z');
 
 
 export const isSafe = (function() {
