@@ -8,6 +8,7 @@
     "server/Url.ts",
     "server/Summoner.ts",
     "server/api.ts",
-    "server/safeguard.ts"
+    "server/safeguard.ts",
+    "server/ErrorFactory.ts"
   ]
 }
