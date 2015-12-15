@@ -75,10 +75,10 @@ app.get('/:server/:name', (req, res) => {
 
         res.send(471, {
           code: 471,
-          message: `Sorry, only current season(6) is supported!` +
+          message: `Sorry, only current season(6) is supported! ` +
             `${summoner.name} was last seen ` +
             `${lastActivity.format("dddd, MMMM Do YYYY, h:mm:ss a")}(` +
-            `${lastActivity.from(SEASON_START, true)}` +
+            `${lastActivity.from(SEASON_START, true)} ` +
             `from the beginning of new season).`
         });
       }
