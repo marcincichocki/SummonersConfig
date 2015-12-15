@@ -2,14 +2,17 @@
 /// <reference path="typings/express/express.d.ts"/>
 /// <reference path="typings/request-promise/request-promise.d.ts"/>
 /// <reference path="typings/q/Q.d.ts"/>
+/// <reference path="typings/moment/moment.d.ts"/>
 
 import express = require('express');
 import rp = require('request-promise');
 import q = require('q');
+import moment = require('moment');
 
 import {Summoner} from './server/Summoner';
 import {Url} from './server/Url';
 import API_KEY from './server/api';
+import isSafe from './server/safeguard';
 
 const PORT: number = 3000;
 const app: express.Express = express();
