@@ -1,6 +1,9 @@
 node_modules/
 typings/
 
+# Visual Studio Code
+.vscode/
+
 npm-debug.log
 
 # css
