@@ -73,7 +73,7 @@ app.get('/:server/:name', (req, res) => {
 
         const lastActivity = moment(summoner.revisionDate);
 
-        res.send(471, {
+        res.status(471).send({
           code: 471,
           message: `Sorry, only current season(6) is supported! ` +
             `${summoner.name} was last seen ` +
