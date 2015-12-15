@@ -49,9 +49,13 @@ export class ImportComponent {
           const data = res.json();
 
           this.runeService.loadRunes(data.runes);
-          this.masteryService.loadMasteries(data.masteries);
+          // this.masteryService.loadMasteries(data.masteries);
         },
-        (error) => console.error(error),
+        (error) => {
+          const err = error.json();
+
+          alert(`${err.code}: ${err.message}`);
+        },
         () => {
 
           // Callback after load.
