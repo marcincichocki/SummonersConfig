@@ -13,9 +13,11 @@ import {Summoner} from './server/Summoner';
 import {Url} from './server/Url';
 import API_KEY from './server/api';
 import {isSafe, SEASON_START} from './server/safeguard';
+import {ErrorFactory} from './server/ErrorFactory';
 
 const PORT: number = 3000;
 const app: express.Express = express();
+const httpError: ErrorFactory = new ErrorFactory();
 
 
 app.use(express.static('./'));
@@ -73,18 +75,23 @@ app.get('/:server/:name', (req, res) => {
 
         const lastActivity = moment(summoner.revisionDate);
 
-        res.status(471).send({
-          code: 471,
-          message: `Sorry, only current season(6) is supported! ` +
+        res.status(471).send(
+          httpError.new(471, `Sorry, only current season(6) is supported! ` +
             `${summoner.name} was last seen ` +
             `${lastActivity.format("dddd, MMMM Do YYYY, h:mm:ss a")}(` +
             `${lastActivity.from(SEASON_START, true)} ` +
             `from the beginning of new season).`
-        });
+          )
+        );
       }
     });
   }).catch((error) => {
-    console.error('Error during lookup for summoner information\nerror: %d', error.statusCode);
-    res.status(error.statusCode);
+    // Log error in console.
+    console.error(error.statusCode);
+
+    // Send error.
+    res.status(error.statusCode).send(
+      httpError.new(error.statusCode)
+    );
   });
 });
