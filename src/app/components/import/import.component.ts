@@ -48,14 +48,36 @@ export class ImportComponent {
         (res) => {
           const data = res.json();
 
-          this.runeService.loadRunes(data.runes);
-          this.masteryService.loadMasteries(data.masteries);
-        },
-        (error) => console.error(error),
-        () => {
 
-          // Callback after load.
-          console.log('Done!')
+          // Because future patches may break the application, loaders
+          // are encapsulated within try catch block.
+          try {
+            // This block may produce error.
+
+            this.runeService.loadRunes(data.runes);
+            this.masteryService.loadMasteries(data.masteries);
+
+            // Hey, everything is loaded and ready!
+            alert('Data loaded!');
+          } catch(error) {
+            // Ouch! Something gone terribly wrong!
+
+
+            // Reset application to original state.
+            this.runeService.pages = [];
+            this.runeService.addPage();
+
+            this.masteryService.pages = [];
+            this.masteryService.addPage();
+
+            // Inform user about error.
+            alert('Error during loading. Data did not load. Please contact author or create issue on github.');
+          }
+        },
+        (error) => {
+          const err = error.json();
+
+          alert(`${err.statusCode}: ${err.message}`);
         }
       );
 

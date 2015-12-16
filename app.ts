@@ -2,17 +2,22 @@
 /// <reference path="typings/express/express.d.ts"/>
 /// <reference path="typings/request-promise/request-promise.d.ts"/>
 /// <reference path="typings/q/Q.d.ts"/>
+/// <reference path="typings/moment/moment.d.ts"/>
 
 import express = require('express');
 import rp = require('request-promise');
 import q = require('q');
+import moment = require('moment');
 
 import {Summoner} from './server/Summoner';
 import {Url} from './server/Url';
 import API_KEY from './server/api';
+import {isSafe, SEASON_START} from './server/safeguard';
+import {ErrorFactory} from './server/ErrorFactory';
 
 const PORT: number = 3000;
 const app: express.Express = express();
+const httpError: ErrorFactory = new ErrorFactory();
 
 
 app.use(express.static('./'));
@@ -59,15 +64,34 @@ app.get('/:server/:name', (req, res) => {
         json: true
       })
     ]).spread((runes, masteries) => {
-      res.send({
-        runes: runes[summoner.id].pages,
-        masteries: masteries[summoner.id].pages,
-        summoner
-      })
-    });
+      if (isSafe(summoner.revisionDate)) {
+        res.send({
+          runes: runes[summoner.id].pages,
+          masteries: masteries[summoner.id].pages,
+          summoner
+        });
+      } else {
+        // Sorry, only latest season supported!
 
+        const lastActivity = moment(summoner.revisionDate);
+
+        res.status(471).send(
+          httpError.new(471, `Sorry, only current season(6) is supported! ` +
+            `${summoner.name} was last seen ` +
+            `${lastActivity.format("dddd, MMMM Do YYYY, h:mm:ss a")}(` +
+            `${lastActivity.from(SEASON_START, true)} ` +
+            `from the beginning of new season).`
+          )
+        );
+      }
+    });
   }).catch((error) => {
-    console.error('Error during lookup for summoner information\nerror: %d', error.statusCode);
-    res.status(error.statusCode);
+    // Log error in console.
+    console.error(error.statusCode);
+
+    // Send error.
+    res.status(error.statusCode).send(
+      httpError.new(error.statusCode)
+    );
   });
 });
