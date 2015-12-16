@@ -1,5 +1,22 @@
 
 
+<a name="0.3.0"></a>
+# 0.3.0 (16.12.2015)
+
+## Bug Fixes
+
+* **tooltip** - Tooltip no longer "stretch" viewport and cause scroll to pop up. Now tooltip change position if there is not enough space[(1571fc3)](https://github.com/marcincichocki/SummonersConfig/commit/1571fc3), closes [#1](https://github.com/marcincichocki/SummonersConfig/issues/1).
+* **tooltip** - Using `.clientX` and `.clientY` instead of `.x` and `.y`(Firefox support)[(16616d7)](https://github.com/marcincichocki/SummonersConfig/commit/16616d7).
+
+## Features
+
+* **import** - Notify user if data was loaded successfully or was there an error(basicly error handling)[(fbb288b)](https://github.com/marcincichocki/SummonersConfig/commit/fbb288b), closes [#11](https://github.com/marcincichocki/SummonersConfig/issues/11).
+
+## BREAKING CHANGES
+
+* **angular** - Updated angular to alpha 53[(23f4417)](https://github.com/marcincichocki/SummonersConfig/commit/23f4417).
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (11.12.2015)
 
