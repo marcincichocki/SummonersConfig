@@ -4,16 +4,17 @@ import {Injectable} from 'angular2/core';
 import {Pages} from '../Pages';
 import {Page} from './Page';
 import {TooltipService} from '../tooltip/tooltip.service';
+import {STATIC_DATA_GRID, STATIC_DATA_MASTERIES} from './staticData';
 
 
 @Injectable()
 export class MasteryService extends Pages<Page> {
 
   // Object which contains grid of masteries.
-  public grid: any;
+  public grid: STATIC_DATA_GRID = {};
 
   // Object which contains every mastery.
-  public masteries: any;
+  public masteries: STATIC_DATA_MASTERIES = {};
 
   // List of categories.
   public categories: string[] = [

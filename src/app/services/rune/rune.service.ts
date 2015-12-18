@@ -5,6 +5,7 @@ import {Pages} from '../Pages';
 import {Page} from './Page';
 import {Slot} from './Slot';
 import {UniqueRune} from './UniqueRune';
+import {STATIC_DATA_STATS, STATIC_DATA_RUNES} from './staticData';
 
 
 @Injectable()
@@ -19,10 +20,10 @@ export class RuneService extends Pages<Page> {
   ];
 
   // Object which contains unitId: unit pairs
-  public stats: any;
+  public stats: STATIC_DATA_STATS = {};
 
   // Object which contains every rune.
-  public runes: any;
+  public runes: STATIC_DATA_RUNES = {};
 
 
   constructor(public http: Http) {
