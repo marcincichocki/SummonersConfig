@@ -6,6 +6,7 @@ import {SearchPipe} from '../../pipes/search.pipe';
 import {Filter} from '../../pipes/filter.pipe';
 import {RuneListItemComponent} from '../runeListItem/runeListItem.component';
 import {TooltipDirective} from '../../directives/tooltip.directive';
+import {Rune} from '../../services/rune/staticData';
 
 
 @Component({
@@ -44,22 +45,6 @@ export class RuneListComponent {
       this.runeService.addRune(id);
     }
   }
-}
-
-
-// rune from runes.json
-interface Rune {
-  id: string,
-  name: string,
-  description: string,
-  tier: number,
-  image: string,
-  primary: string,
-  type: string,
-  available: boolean,
-  ip: number,
-  tags: string[],
-  stats: any
 }
 
 class RunesByType {
