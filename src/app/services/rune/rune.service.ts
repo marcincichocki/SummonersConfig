@@ -200,14 +200,4 @@ export class RuneService extends Pages<Page> {
   getTypeId(id: number): number {
     return this.types.indexOf(this.runes[id].type);
   }
-
-
-  /**
-   * Display "%" if unitId includes string "Percent"
-   * @param {string} unitId - Specyfic unitId of rune.
-   * @return {string}
-   */
-  isPercentage(unitId: string): string {
-    return /Percent/.test(unitId) ? '%' : '';
-  }
 }
